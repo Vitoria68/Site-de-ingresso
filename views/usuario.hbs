@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Usuário</title>
+</head>
+<body>
+    {{#if usuario.cpf}}
+        <h3>Dados cadastrados:</h3>
+        <p>Nome: {{usuario.nome}}</p>
+        <p>E-mail: {{usuario.email}}</p>
+        <h3>Ingressos comprados:</h3>
+            {{#if usuarios.length}}
+
+                {{#each usuarios}}
+                    <p>{{this.show}}</p> 
+                {{/each}}
+
+            {{else}}
+                    <p>Nenhum ingresso comprado ainda. Que tal comprar o primeiro?</p>
+            {{/if}}
+
+    {{else}}
+        <p>Não encontramos seu cpf... Faça seu cadastro!</p>
+    {{/if}}
+</body>
+</html>
