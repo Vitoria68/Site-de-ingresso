@@ -1,1 +1,52 @@
+body {
+    background-color: #ECF0F1;
+}
 
+.logo {
+    background-color: #2C3E50;
+    height: 166px;
+
+}
+
+.icons-nav {
+    color: #ECF0F1;
+
+}
+
+.navbar {
+    background-color: #F7CAC9;
+}
+
+.showsInternacionais {
+    padding-top: 25px;
+    padding-left: 30px;
+    background-color: #F2E6B8;
+
+}
+
+.cardsInter {
+    padding-top: 20px;
+    box-shadow: rgba(235, 212, 120, 50);
+}
+
+.showsNacionais {
+    padding-top: 25px;
+    padding-left: 30px;
+    background-color: #F2E6B8;
+
+}
+
+footer {
+    background-color: #2C3E50;
+    color: #F7CAC9;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.card{
+     box-shadow: 5px 5px rgba(75, 56, 50, 0.5);
+
+}

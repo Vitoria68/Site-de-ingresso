@@ -1,17 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br"></html>
+<html lang="pt-br">
+
+</html>
 <html>
-  <head>
-    <title>{{titulo_pagina}}</title>
-    <link rel='stylesheet' href='/stylesheets/bootstrap/bootstrap.min.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <p><a href="/">Home</a> | <a href="/quemSomos">Quem Somos</a> | <a href="/ajuda">Ajuda</a> | <a href="/meiaEntrada">Meia Entrada</a> | <a href="/usuario">Página do Usuário</a> | <a href="/inscricao">Página de Cadastro</a></p>
-    <div class="container">
-      {{{body}}}
+
+<head>
+  <title>{{titulo_pagina}}</title>
+  <link rel='stylesheet' href='/stylesheets/bootstrap/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+ <div class="logo py-3">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="left-icons"></div>
+    <div class="text-center">
+      <img src="../img/ego.png" alt="Logo" class="logo-img mx-auto d-block">
     </div>
-    <script src="/javascripts/bootstrap/bootstrap.bundle.min.js"></script>
-  </body>
+  </div>
+</div>
+
+  <nav class="navbar navbar-expand-lg menu-bar">
+    <div class="container justify-content-center">
+      <ul class="navbar-nav text-uppercase">
+        <li class="nav-item mx-3"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="#">Área do Usuário</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="#">Ajuda</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="#">Meia Entrada</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="#">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  {{{body}}}
+  <footer>
+        <p> 2025 - Todos os direitos reservados</p>
+        <p>Entre em contato pelo e-mail: stageOne@gmail.com</p>
+    </footer>
+    <script src="../js/bootstrap/bootstrap.bundle.min.js">
+    </script>
+
+  <script src="/javascripts/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
