@@ -1,18 +1,60 @@
+<div class="form-container">
+    <form method='POST' action='/usuario/cria'>
+       
 
-<h1>Novo Usuario</h1>
+        <legend>Informações Pessoais</legend>
 
-<form method='POST' action='/usuario/cria'>
-    <p><label for="cpf">Informe seu CPF: </label></p>
-    <p><input type='number' name='id' value="" size="30" required /></p>
+        <div class="row">
+            <div class="col-6">
+                <p><label for="nome">Nome Completo</label></p>
+                <p><input type="text" name="nome" value="" size="60" required></p>
+            </div>
+            <div class="col-6">
+                <p><label for="cpf">Informe seu CPF: </label></p>
+                <p><input type='number' name='cpf' value="" size="30" required /></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p><label for="email">Informe seu e-mail:</label></p>
+                <p><input type='text' name='email' value="" size="60" required /></p>
+            </div>
+            <div class="col-6">
+                <p><label for="senha"> Crie uma senha para login</label>
+                </p>
+                <p><input type="text" name="senha" value="" size="60" required>
+                </p>
+            </div>
+        </div>
+        <br>
+        <fieldset>
+            <legend>
+                Dados de Pagamento
+            </legend>
 
-    <p><label for="nome">Informe seu nome completo:</label></p>
-    <p><input type='text' name='nome' value="" size="60" required/></p>
+            <div class="row">
+                <div class="col-6">
+                    <p><label for="nomeCartao">Nome do Cartão </label></p>
+                    <p><input type="text" name="nomeCartao" value="" size="60" required></p>
+                </div>
+                <div class="col-6">
+                    <p> <label for="numero">Número do Cartão</label></p>
+                    <p><input type="number" name="numero" value="" size="60" required></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <p><label for="validade">Validade:</label></p>
+                    <p><input type="text" name="validade" value="" size="60" required></p>
+                </div>
+                <div class="col-6">
+                    <p><label for="cvv">CVV</label></p>
+                    <p> <input type="text" name="cvv" value="" size="60" required></p>
 
-    <p><label for="email">Informe seu e-mail:</label></p>
-    <p><input type='text' name='email' value="" size="60" required/></p>
-    
-    <button type="submit">Salvar Usuário</button>
-</form>
-
-<br>
-<a href="/">Voltar</a>
+                </div>
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+        <a href="/"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+    </form>
+</div>

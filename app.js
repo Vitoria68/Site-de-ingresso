@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 var rotasIndex = require('./routes/rotasIndex');
 var rotasUsuarios = require('./routes/rotasUsuarios');
-
-
+var rotasShows = require('./routes/rotasShows');
+var session = require('express-session');
 
 var app = express();
 
@@ -21,9 +21,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret:'codigo',
+  resave:false,
+  saveUninitialized:true
+}));
+
 app.use('/', rotasIndex);
 app.use('/usuario', rotasUsuarios);
-
+app.use('/show', rotasShows);
 
 
 // catch 404 and forward to error handler

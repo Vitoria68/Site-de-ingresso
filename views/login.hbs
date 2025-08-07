@@ -1,25 +1,16 @@
-<h1>Página de Login</h1>
+<div class="container login">
+    <form method="POST" action="/usuario/login">
+        <h1>Bem-vindo de volta!</h1>
+        <p class="subtitle">Acesse sua conta</p>
 
-<form method='POST' action='/usuario/altera/{{receita.id}}'>
-    <p><label for="id">Identificação da Receita</label></p>
-    <p><input type='number' name='id' value="{{receita.id}}" size="30" readonly/></p>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required placeholder="Digite seu email">
 
-    <p><label for="titulo">Título da Receita</label></p>
-    <p><input type='text' name='titulo' value="{{receita.titulo}}" size="60" /></p>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
 
-    <p><label for="ingredientes">Ingredientes</label></p>
-    <p><textarea rows="5" cols="57" name='ingredientes' value="{{receita.ingredientes}}" ></textarea></p>
-    <h5>Digite cada ingrediente em uma nova linha</h5>
-
-    <p><label for="preparo">Modo de Preparo</label></p>
-    <p><textarea rows="5" cols="57" name='preparo' value="{{receita.preparo}}"  ></textarea></p>
-    <h5>Descreva passo a passo o modo de preparo</h5>
-
-    <p><label for="tempo">Tempo de Preparo(minutos)</label></p>
-    <p><input type='number' name='tempo' min = '1' value="{{receita.tempo}}" size="60"  /></p>
-    
-    <button type="submit">Alterar Receita</button>
-</form>
-
-<br>
-<a href="/">Voltar</a>
+        <br>
+        <button type="submit" class="btn-login">Login</button>
+    </form>
+    <a href="/inscricao" class="cadastro-link">Ainda não tem uma conta? Cadastre-se</a>
+</div>

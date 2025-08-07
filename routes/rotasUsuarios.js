@@ -11,4 +11,6 @@ router.post('/cria', controllerUsuario.cria_post);
 /* GET Consulta Usuario. */
 router.get('/consulta/:cpf_usuario', controllerUsuario.consulta);
 
+
+
 module.exports = router;

@@ -39,6 +39,7 @@ class UsuarioMongo {
 
         return usuarios
     }
+  
 
     async lista_cpfs() {
         await conexao_bd()
