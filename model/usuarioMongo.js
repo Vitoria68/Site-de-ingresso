@@ -18,7 +18,7 @@ class UsuarioMongo {
             cliente.close()
         cliente = undefined
     }
-    
+
     async cria(usuario) {
         await conexao_bd()
         const colecao = bd().collection("usuarios")
@@ -39,7 +39,14 @@ class UsuarioMongo {
 
         return usuarios
     }
-  
+
+
+    async consultaporEmail(email) {
+        await conexao_bd();
+        const colecao = bd().collection("usuarios")
+        var email = await colecao.findOne({ email: email });
+        return email
+    }
 
     async lista_cpfs() {
         await conexao_bd()

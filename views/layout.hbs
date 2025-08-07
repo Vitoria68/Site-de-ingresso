@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-</html>
-<html>
-
 <head>
   <title>{{titulo_pagina}}</title>
   <link rel='stylesheet' href='/stylesheets/bootstrap/bootstrap.min.css' />
@@ -13,38 +10,54 @@
 
 <body>
 
- <div class="logo py-3">
-  <div class="container d-flex justify-content-center align-items-center">
-    <div class="left-icons"></div>
-    <div class="text-center">
-      <img src="../img/ego.png" alt="Logo" class="logo-img mx-auto d-block">
+  <div class="logo py-3">
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="left-icons"></div>
+      <div class="text-center">
+        <img src="../img/ego.png" alt="Logo" class="logo-img mx-auto d-block">
+      </div>
     </div>
   </div>
-</div>
 
   <nav class="navbar navbar-expand-lg menu-bar">
     <div class="container justify-content-center">
       <ul class="navbar-nav text-uppercase">
         <li class="nav-item mx-3"><a class="nav-link" href="/">Home</a></li>
         <li class="nav-item mx-3"><a class="nav-link" href="/usuario">Área do Usuário</a></li>
-        <li class="nav-item mx-3"><a class="nav-link" hhref="/ajuda">Ajuda</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="/ajuda">Ajuda</a></li>
         <li class="nav-item mx-3"><a class="nav-link" href="/meiaEntrada">Meia Entrada</a></li>
         <li class="nav-item mx-3"><a class="nav-link" href="/inscricao">Página de Cadastro</a></li>
+
+        {{#if usuario}}
+        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/logout">Sair</a></li>
+        {{else}}
+        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/login">Login</a></li>
+        {{/if}}
       </ul>
     </div>
   </nav>
 
+  {{!-- Saudação após login --}}
+  {{#if usuario}}
+  <div class="container mt-3 text-center">
+    <div class="alert alert-success" role="alert">
+      Olá, bem-vinda de novo, <strong>{{usuario.nome}}</strong>!
+    </div>
+  </div>
+  {{/if}}
+
   <div class="titulo">
     {{titulo_secundario}}
   </div>
-  {{{body}}}
-  <footer>
-        <p> 2025 - Todos os direitos reservados</p>
-        <p>Entre em contato pelo e-mail: stageOne@gmail.com</p>
-    </footer>
-    <script src="../js/bootstrap/bootstrap.bundle.min.js">
-    </script>
 
+  {{{body}}}
+
+  <footer>
+    <p>2025 - Todos os direitos reservados</p>
+    <p>Entre em contato pelo e-mail: stageOne@gmail.com</p>
+  </footer>
+
+  <script src="../js/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="/javascripts/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 

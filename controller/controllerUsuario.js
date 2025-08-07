@@ -36,3 +36,37 @@ exports.consulta = async function (req, res) {
     res.render('consultaUsuario', contexto);
 }
 
+exports.login_get = async function (req, res) {
+    contexto = {
+        titulo_pagina: "Login",
+        titulo_secundario: "Login",
+    }
+    res.render('login', contexto);
+}
+exports.login_post = async function (req, res) {
+    var email = req.body.email;
+    var senha = req.body.senha;
+    var usuario = await usuarios.consultaporEmail(email);
+
+    if (!usuario || usuario.senha !== senha) {
+        return res.redirect('/usuario/login');
+    }
+
+    req.session.usuario = {
+        nome: usuario.nome,
+        email: usuario.email,
+        cpf: usuario.cpf
+    };
+
+    res.redirect('/');
+}
+
+exports.logout = async function (req, res) {
+    req.session.destroy(function (err) {
+        if (err) {
+            console.log('Erro ao encerrar a sessão', err);
+        }
+        res.redirect('/usuario/login');
+    });
+
+};
