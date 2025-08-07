@@ -23,15 +23,16 @@
     <div class="container justify-content-center">
       <ul class="navbar-nav text-uppercase">
         <li class="nav-item mx-3"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item mx-3"><a class="nav-link" href="/usuario">Área do Usuário</a></li>
+        {{#if usuario}}
+          <li class="nav-item mx-3"><a class="nav-link" href="/usuario">Área do Usuário</a></li>
+        {{/if}}
         <li class="nav-item mx-3"><a class="nav-link" href="/ajuda">Ajuda</a></li>
         <li class="nav-item mx-3"><a class="nav-link" href="/meiaEntrada">Meia Entrada</a></li>
-        <li class="nav-item mx-3"><a class="nav-link" href="/inscricao">Página de Cadastro</a></li>
-
+         <li class="nav-item mx-3"><a class="nav-link" href="/inscricao">Página de Cadastro</a></li>
         {{#if usuario}}
-        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/logout">Sair</a></li>
+         <li class="nav-item mx-3"><a class="nav-link" href="/usuario/logout">Sair</a></li>
         {{else}}
-        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/login">Login</a></li>
+          <li class="nav-item mx-3"><a class="nav-link" href="/usuario/login">Login</a></li>
         {{/if}}
       </ul>
     </div>
