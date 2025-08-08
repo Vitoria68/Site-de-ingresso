@@ -20,4 +20,13 @@ router.post('/login', controllerUsuario.login_post);
 /* GET sai do logado. */
 router.get('/logout', controllerUsuario.logout); 
 
+/* GET Altera usuario. */
+router.get('/altera/:cpf_usuario', controllerUsuario.altera_get);
+
+/* POST Altera usuario. */
+router.post('/altera/:cpf_usuario', controllerUsuario.altera_post);
+
+/* GET Exclui usuario. */
+router.get('/deleta/:cpf_usuario', controllerUsuario.deleta);
+
 module.exports = router;

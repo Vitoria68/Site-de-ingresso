@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const bodyParser = require('body-parser');
 
+var rotasAPI = require('./routes/rotasAPI');
 var rotasIndex = require('./routes/rotasIndex');
 var rotasUsuarios = require('./routes/rotasUsuarios');
 var rotasShows = require('./routes/rotasShows');
@@ -21,12 +23,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(bodyParser.json());
+
 app.use(session({
   secret:'codigo',
   resave:false,
   saveUninitialized:true
 }));
 
+
+app.use(function(req, res, next) {
+  res.locals.usuario = req.session.usuario;
+  next();
+});
+
+app.use('/api', rotasAPI);
 app.use('/', rotasIndex);
 app.use('/usuario', rotasUsuarios);
 app.use('/show', rotasShows);

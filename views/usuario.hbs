@@ -1,22 +1,37 @@
-{{#if usuario}}
-    <div class="container consulta">
-<fieldset>
-    <legend>
-        Informações Pessoais
-    </legend>
+<div class="container consulta">
+    <h4>Informações Pessoais</h4>
     <p><b>Nome: </b> {{usuario.nome}}</p>
     <p><b>cpf: </b> {{usuario.cpf}}</p>
     <p><b>E-mail de cadastro: </b> {{usuario.email}}</p>
-    
-</fieldset>
 
-<fieldset>
-    <legend>
-        Dados de Pagamento
-    </legend>
+    <h4>Dados de Pagamento</h4>
+    
     <p><b>Nome do Cartão: </b> {{usuario.nomeCartao}}</p>
     <p><b>Número do Cartão: </b> {{usuario.numero}}</p>
     <p><b>Ano de Validade do Cartão: </b> {{usuario.validade}}</p>
-</fieldset>
+    <br>
+    <h4>Ingressos Comprados</h4>
 
-</div>
+    <br>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Ingressos
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Gerar o pdf aqui, colocar um icone que exclui o pdf e um modal que pergunte se ele tem certeza 
+                    que deseja excluir o pdf
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <a href="/usuario/altera/{{cpf}}"><button type="button" class="btn btn-success">Alterar</button></a>
+    <a href="/">Voltar</a>
+    </div>
+    
