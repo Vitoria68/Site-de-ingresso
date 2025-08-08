@@ -5,15 +5,20 @@
         </div>
         <div class="col-md-6">
             <h1>{{show.nome}}</h1>
-            <p><strong>Data:</strong> {{show.data}}</p>
-            <p><strong>Horário do show:</strong> {{show.horario}}</p>
-            <p><strong>Abertura dos portões:</strong> {{show.abertura}}</p>
-            <p><strong>Local:</strong> {{show.endereco}}</p>
-            <p><strong>Classificação:</strong> {{show.classificacao}}</p>
-            <p><strong>Capacidade:</strong> {{show.capacidade}} pessoas</p>
-            <p><strong>Valor do ingresso:</strong> R$ {{show.valor}},00</p>
+            <p><h5>Data:</h5> {{show.data}}</p>
+            <p><h5>Horário do show:</h5> {{show.horario}}</p>
+            <p><h5>Abertura dos portões:</h5> {{show.abertura}}</p>
+            <p><h5>Local:</h5> {{show.endereco}}</p>
+            <p><h5>Classificação:</h5> {{show.classificacao}}</p>
+            <p><h5>Capacidade:</h5> {{show.capacidade}} pessoas</p>
+            <p><h5>Valor do ingresso:</h5> R$ {{show.valor}},00</p>
 
-            <a href="#" class="btn btn-success mt-3">Comprar Ingresso</a>
+            {{!-- se a pessoa tiver logada --}}
+            {{#if usuario}}
+           <button type="button" class="btn btn-success">Comprar Ingresso</button>
+            {{else}}
+           <a href="/usuario/login"> <button type="button" class="btn btn-success">Comprar Ingresso</button></a>
+            {{/if}}
         </div>
     </div>
 </div>

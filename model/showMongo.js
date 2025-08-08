@@ -29,7 +29,10 @@ async atualiza(show) {
     async cria(show) {
         await conexao_bd()
         const colecao = bd().collection("shows")
-        await colecao.insertOne(show)
+        const existe = await colecao.findOne({id: show.id});
+        if(!existe){
+            await colecao.insertOne(show);
+        }
     }
     async consulta(id) {
         await conexao_bd()
@@ -68,6 +71,8 @@ async atualiza(show) {
         const qtd = await colecao.count({})
         return qtd
     }
+    
+
 
 }
 

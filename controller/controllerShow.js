@@ -1,7 +1,7 @@
 const shows =  require('../model/showMongo.js')
 
 exports.consulta = async function(req, res){
-    //informação passada como parâmetro na url
+    
     var id = req.params.id_show
     var show= await shows.consulta(id);
     
@@ -10,7 +10,7 @@ exports.consulta = async function(req, res){
         titulo_pagina: "Informações sobre o show",
         show: show,
     }
-    // renderiza o arquivo dentro da pasta view
+   
     res.render('consultaShow', contexto);
     }
 
@@ -19,3 +19,4 @@ exports.consulta = async function(req, res){
             titulo_pagina: "Criacao de Nota",
         }
     }
+    

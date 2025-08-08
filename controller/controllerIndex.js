@@ -7,7 +7,7 @@ exports.tela_principal = async function(req, res){
 
      var show1 = {
         id:"1",
-        nome: "The Cheminal Romance",
+        nome: "My Cheminal Romance",
         data: "06 de Fevereiro",
         imagem: "TourCheminal.jpg",
         horario: "21h",
