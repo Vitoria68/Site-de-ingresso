@@ -1,5 +1,6 @@
 
 const mongodb = require('mongodb')
+
 // cria uma instância do cliente do mongo
 const ClienteMongo = mongodb.MongoClient;
 var cliente;
@@ -18,31 +19,26 @@ class UsuarioMongo {
             cliente.close()
         cliente = undefined
     }
-     async atualiza(nome, email, cpf, senha, nomeCartao, numero, validade,cvv) {
+    async atualiza(usuario) {
         await conexao_bd();
-        const usuario = new usuario(nome, email, cpf, senha, nomeCartao, numero, validade,cvv)
         const colecao = bd().collection("usuarios")
         await colecao.updateOne(
-            { cpf: cpf },
-            { $set: { nome: nome, email:email, senha:senha, nomeCartao:nomeCartao, numero:numero, validade:validade, cvv:cvv } }
+            { cpf: usuario.cpf },
+            { $set: {  nome: nome, email: email, senha: senha, nomeCartao: nomeCartao, numero: numero, validade: validade, cvv: cvv} }
         )
-        return usuario
     }
-
-   async cria(cnome, email, cpf, senha, nomeCartao, numero, validade,cvv) {
+   
+    async cria(usuario) {
         await conexao_bd()
-        const usuario = new usuario(nome, email, cpf, senha, nomeCartao, numero, validade,cvv)
         const colecao = bd().collection("usuarios")
-        await colecao.insertOne({ nome: nome, email:email, senha:senha, nomeCartao:nomeCartao, numero:numero, validade:validade, cvv:cvv})
-        return usuario
+        await colecao.insertOne(usuario)
     }
     async consulta(cpf) {
         await conexao_bd()
         const colecao = bd().collection("usuarios")
-        const doc = await colecao.findOne({ cpf: cpf })
-        const usuario = new usuario(doc.nome, doc.email, doc.cpf, doc.senha, doc.nomeCartao, doc.numero, doc.validade,doc.cvv)
+        const usuario = await colecao.findOne({cpf:cpf})
         return usuario
-       
+
     }
 
     async lista() {
@@ -52,7 +48,7 @@ class UsuarioMongo {
 
         return usuarios
     }
-     async deleta(cpf) {
+    async deleta(cpf) {
         await conexao_bd()
         const colecao = bd().collection("usuarios")
         const doc = await colecao.findOne({ cpf: cpf })

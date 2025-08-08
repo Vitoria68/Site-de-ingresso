@@ -14,9 +14,5 @@ exports.consulta = async function(req, res){
     res.render('consultaShow', contexto);
     }
 
-    exports.cria_get = async function (req,res) {
-        contexto = {
-            titulo_pagina: "Criacao de Nota",
-        }
-    }
+ 
     

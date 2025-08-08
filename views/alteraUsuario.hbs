@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form method='POST' action='/usuario/atualiza/{{cpf}}'>
+    <form method='POST' action='/usuario/atualiza/{{usuario.cpf}}'>
        
 
         <legend>Informações Pessoais</legend>
@@ -7,22 +7,22 @@
         <div class="row">
             <div class="col-6">
                 <p><label for="nome">Nome Completo</label></p>
-                <p><input type="text" name="nome" value="{{nome}}" size="60" required></p>
+                <p><input type="text" name="nome" value="{{usuario.nome}}" size="60" required></p>
             </div>
             <div class="col-6">
                 <p><label for="cpf">Informe seu CPF: </label></p>
-                <p><input type='number' name='cpf' value="{{cpf}}" size="30" readonly/></p>
+                <p><input type='number' name='cpf' value="{{usuario.cpf}}" size="30" readonly/></p>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
                 <p><label for="email">Informe seu e-mail:</label></p>
-                <p><input type='text' name='email' value="{{email}}" size="60" required /></p>
+                <p><input type='text' name='email' value="{{usuario.email}}" size="60" required /></p>
             </div>
             <div class="col-6">
                 <p><label for="senha"> Crie uma senha para login</label>
                 </p>
-                <p><input type="text" name="senha" value="{{senha}}" size="60" required>
+                <p><input type="text" name="senha" value="{{usuario.senha}}" size="60" required>
                 </p>
             </div>
         </div>
@@ -35,21 +35,21 @@
             <div class="row">
                 <div class="col-6">
                     <p><label for="nomeCartao">Nome do Cartão </label></p>
-                    <p><input type="text" name="nomeCartao" value="{{nomeCartao}}" size="60" required></p>
+                    <p><input type="text" name="nomeCartao" value="{{usuario.nomeCartao}}" size="60" required></p>
                 </div>
                 <div class="col-6">
                     <p> <label for="numero">Número do Cartão</label></p>
-                    <p><input type="number" name="numero" value="{{numero}}" size="60" required></p>
+                    <p><input type="number" name="numero" value="{{usuario.numero}}" size="60" required></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
                     <p><label for="validade">Ano de Validade do Cartão:</label></p>
-                    <p><input type="text" name="validade" value="{{validade}}" size="60" required></p>
+                    <p><input type="text" name="validade" min=2025 value="{{usuario.validade}}" size="60" required></p>
                 </div>
                 <div class="col-6">
                     <p><label for="cvv">CVV</label></p>
-                    <p> <input type="text" name="cvv" value="{{cvv}}" size="60" required></p>
+                    <p> <input type="text" name="cvv" value="{{usuario.cvv}}" size="60" required></p>
 
                 </div>
             </div>

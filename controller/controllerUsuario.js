@@ -83,14 +83,7 @@ exports.altera_get = async function (req, res) {
     var usuario = await usuarios.consulta(cpf)
     contexto = {
         titulo_pagina: "Altera a usuario",
-        nome: usuario.nome,
-        cpf: usuario.cpf,
-        email: usuario.email,
-        senha: usuario.senha,
-        nomeCartao: usuario.nomeCartao,
-        numero: usuario.numero,
-        validade: usuario.validade,
-        cvv: usuario.cvv
+        usuario:usuario,
     }
     // renderiza o arquivo dentro da pasta view
     res.render('alteraUsuario', contexto)
@@ -98,18 +91,10 @@ exports.altera_get = async function (req, res) {
 // cria e já exporta a função que será responsável pela criação de usuario
 exports.altera_post = async function (req, res) {
     // obtem as informações do formulário
-
-       var nome= req.body.nome
-       var email=req.body.email
-       var cpf=req.body.cpf
-       var senha= req.body.senha
-       var nomeCartao= req.body.nomeCartao
-       var numero= req.body.numero
-       var validade= req.body.validade
-       var cvv= req.body.cvv
+        var usuario = req.body
    
-    await usuarios.atualiza(nome, email, cpf, senha, nomeCartao, numero, validade,cvv)
-    // redireciona para a página principal
+    await usuarios.atualiza(usuario)
+    // redireciona para consulta
     res.redirect('/usuario/consulta')
 }
 // cria e já exporta a função que será responsável pela exclusão da usuario
