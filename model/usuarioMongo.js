@@ -24,7 +24,7 @@ class UsuarioMongo {
         const colecao = bd().collection("usuarios")
         await colecao.updateOne(
             { cpf: usuario.cpf },
-            { $set: {  nome: nome, email: email, senha: senha, nomeCartao: nomeCartao, numero: numero, validade: validade, cvv: cvv} }
+            { $set: {  nome: usuario.nome, email: usuario.email, senha: usuario.senha, nomeCartao: usuario.nomeCartao, numero: usuario.numero, validade: usuario.validade, cvv: usuario.cvv} }
         )
     }
    

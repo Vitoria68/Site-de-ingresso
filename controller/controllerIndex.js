@@ -95,12 +95,12 @@ exports.tela_principal = async function(req, res){
     const listaDeShows = await shows.lista();
 
 
-
     contexto = {
         titulo_pagina: "Página inicial",
         usuarios: await usuarios.lista(),
         usuario:usuario,
         ListaDeShows : listaDeShows,
+        
 }
     // renderiza o arquivo home.hbs, dentro da pasta view
     res.render('home', contexto);
