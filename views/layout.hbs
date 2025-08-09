@@ -29,7 +29,12 @@
         {{/if}}
         <li class="nav-item mx-3"><a class="nav-link" href="/ajuda"><i class="bi bi-patch-question"></i> Ajuda</a></li>
         <li class="nav-item mx-3"><a class="nav-link" href="/meiaEntrada"><i class="bi bi-ticket-perforated"></i> Meia Entrada</a></li>
+       
+        {{#if usuario }}
+
+        {{else}}
         <li class="nav-item mx-3"><a class="nav-link" href="/inscricao"><i class="bi bi-person-heart"></i> Página de Cadastro</a></li>
+        {{/if}}
         {{#if usuario}}
         <li class="nav-item mx-3"><a class="nav-link" href="/usuario/logout"> <i class="bi bi-door-open"></i>Sair</a></li>
         {{else}}
