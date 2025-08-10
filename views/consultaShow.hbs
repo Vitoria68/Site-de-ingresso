@@ -5,20 +5,48 @@
         </div>
         <div class="col-md-6">
             <h1>{{show.nome}}</h1>
-            <p><h5>Data:</h5> {{show.data}}</p>
-            <p><h5>Horário do show:</h5> {{show.horario}}</p>
-            <p><h5>Abertura dos portões:</h5> {{show.abertura}}</p>
-            <p><h5>Local:</h5> {{show.endereco}}</p>
-            <p><h5>Classificação:</h5> {{show.classificacao}}</p>
-            <p><h5>Capacidade:</h5> {{show.capacidade}} pessoas</p>
-            <p><h5>Valor do ingresso:</h5> R$ {{show.valor}},00</p>
-            
+            <p>
+            <h5>Data:</h5> {{show.data}}</p>
+            <p>
+            <h5>Horário do show:</h5> {{show.horario}}</p>
+            <p>
+            <h5>Abertura dos portões:</h5> {{show.abertura}}</p>
+            <p>
+            <h5>Local:</h5> {{show.endereco}}</p>
+            <p>
+            <h5>Classificação:</h5> {{show.classificacao}}</p>
+            <p>
+            <h5>Capacidade:</h5> {{show.capacidade}} pessoas</p>
+            <p>
+            <h5>Valor do ingresso:</h5> R$ {{show.valor}}</p>
+
             {{!-- se a pessoa tiver logada --}}
             {{#if usuario}}
-           <a href="/{{show.id}}.pdf" target="_blank" class="btn btn-success">Comprar Ingresso</a>
+            <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCompra">
+                Comprar Ingresso
+            </a>
             {{else}}
-           <a href="/usuario/login"> <button type="button" class="btn btn-success">Comprar Ingresso</button></a>
+            <a href="/usuario/login"> <button type="button" class="btn btn-success">Comprar Ingresso</button></a>
             {{/if}}
+            <a href="/"> Voltar</a>
+
+        </div>
+    </div>
+</div>
+<br>
+<div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalCompraLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCompraLabel">Compra realizada!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                Seu ingresso está abrindo...
+            </div>
+            <div class="modal-footer">
+                <a href="/{{show.id}}.pdf" target="_blank" class="btn btn-success">Abrir manualmente</a>
+            </div>
         </div>
     </div>
 </div>

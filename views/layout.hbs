@@ -25,20 +25,25 @@
       <ul class="navbar-nav text-uppercase">
         <li class="nav-item mx-3"><a class="nav-link" href="/"> <i class="bi bi-house-heart"></i> Home</a></li>
         {{#if usuario}}
-        <li class="nav-item mx-3"><a class="nav-link" href="/usuario"><i class="bi bi-person-vcard"></i> Área do Usuário</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="/usuario"><i class="bi bi-person-vcard"></i> Área do
+            Usuário</a></li>
         {{/if}}
         <li class="nav-item mx-3"><a class="nav-link" href="/ajuda"><i class="bi bi-patch-question"></i> Ajuda</a></li>
-        <li class="nav-item mx-3"><a class="nav-link" href="/meiaEntrada"><i class="bi bi-ticket-perforated"></i> Meia Entrada</a></li>
-       
+        <li class="nav-item mx-3"><a class="nav-link" href="/meiaEntrada"><i class="bi bi-ticket-perforated"></i> Meia
+            Entrada</a></li>
+
         {{#if usuario }}
 
         {{else}}
-        <li class="nav-item mx-3"><a class="nav-link" href="/inscricao"><i class="bi bi-person-heart"></i> Página de Cadastro</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="/inscricao"><i class="bi bi-person-heart"></i> Página de
+            Cadastro</a></li>
         {{/if}}
         {{#if usuario}}
-        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/logout"> <i class="bi bi-door-open"></i>Sair</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/logout"> <i class="bi bi-door-open"></i>Sair</a>
+        </li>
         {{else}}
-        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/login"> <i class="bi bi-person-circle"></i> Login</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="/usuario/login"> <i class="bi bi-person-circle"></i>
+            Login</a></li>
         {{/if}}
       </ul>
     </div>
@@ -57,15 +62,18 @@
     {{titulo_secundario}}
   </div>
 
+<div class = container-body>
   {{{body}}}
 
+</div>
   <footer>
     <p>2025 - Todos os direitos reservados</p>
     <p>Entre em contato pelo e-mail: stageOne@gmail.com</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-  <script src="../js/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="/javascripts/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

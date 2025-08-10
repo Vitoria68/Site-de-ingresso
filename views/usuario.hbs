@@ -13,8 +13,31 @@
 
     <a href="/usuario/altera/{{usuario.cpf}}"><button type="button" class="btn btn-success">Alterar</button></a>
 
-    <a href="/usuario/deleta/{{usuario.cpf}}"><button type="submit" class="btn btn-danger"><i class="bi bi-x-circle"></i>
-            Excluir</button></a>
+  <!-- Botão para abrir modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleta">
+    ❌ Deletar conta
+</button>
 
-    <a href="/">Voltar</a>
+<a href="/">Voltar</a>
+
+<!-- Modal -->
+<div class="modal fade" id="modalDeleta" tabindex="-1" aria-labelledby="modalDeletaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="modalDeletaLabel"> Vai mesmo nos deixar?</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                Se você confirmar, sua conta e todos os seus dados serão apagados <strong>para sempre</strong>.<br>
+                Vamos sentir sua falta! 
+            </div>
+            <div class="modal-footer">
+                <a href="/usuario/consulta/{{usuario.cpf}}" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</a>
+                <a href="/usuario/deleta/{{usuario.cpf}}" class="btn btn-primary">Sim, excluir</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+
