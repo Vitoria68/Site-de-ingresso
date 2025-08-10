@@ -119,6 +119,10 @@ exports.deleta = async function (req, res) {
     var cpf = req.params.cpf_usuario
     await usuarios.deleta(cpf);
 
-    // redireciona para a página principal
-    res.redirect('/');
+   req.session.destroy(function (err) {
+        if (err) {
+            console.log('Erro ao encerrar a sessão', err);
+        }
+        res.redirect('/usuario/login');
+    });
 }
