@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
+const hbs = require('hbs');
+hbs.registerHelper('eq', function(a, b) {
+    return a === b;
+});
 
 var rotasAPI = require('./routes/rotasAPI');
 var rotasIndex = require('./routes/rotasIndex');

@@ -15,7 +15,8 @@ exports.tela_principal = async function(req, res){
         endereco: "Av. Francisco Matarazzo, 1705 – Água Branca, São Paulo – SP, 05001-200",
         classificacao: "Entrada e permanência de crianças/adolescentes de 05 a 15 anos de idade, acompanhados dos pais ou responsáveis, e de 16 a 17 anos, desacompanhados dos pais ou responsáveis legais.",
         capacidade: "20000",
-        valor: "570,00"
+        valor: "570,00",
+        ingresso: "mcr"
     };
     await shows.cria(show1);
 
@@ -29,7 +30,8 @@ exports.tela_principal = async function(req, res){
         endereco: " Rua Tagipuru, 795 – Barra Funda, São Paulo, SP",
         classificacao:"15 anos",
         capacidade: "8.648",
-        valor: "350,00"
+        valor: "350,00",
+        ingresso: "alessia"
         
     };
     await shows.cria(show2);
@@ -44,7 +46,8 @@ exports.tela_principal = async function(req, res){
         endereco: " VIBRA São Paulo - Av. das Nações Unidas, 17955 - Vila Almeida, São Paulo - SP, 04795-100",
         classificacao: "15 anos",
         capacidade: "5.455",
-        valor: "990,00"
+        valor: "990,00",
+        ingresso: "therose"
         
     };
     await shows.cria(show3);
@@ -59,7 +62,8 @@ exports.tela_principal = async function(req, res){
         endereco: "Av. Francisco Matarazzo, 1705 – Água Branca, São Paulo/SP ",
         classificacao: "14 anos desacompanhados(menores de 14 somente com responsáveis)",
         capacidade: "8.000",
-        valor: "820"
+        valor: "820",
+        ingresso: "louis"
        
     };
     await shows.cria(show4);
@@ -74,7 +78,8 @@ exports.tela_principal = async function(req, res){
         endereco: "Tom Brasil (no bairro Morumbi, São Paulo/SP)",
         classificacao: "+16",
         capacidade: "5.000",
-        valor: "400"
+        valor: "400",
+        ingresso: "anavitoria"
     };
     await shows.cria(show5);
 
@@ -88,7 +93,8 @@ exports.tela_principal = async function(req, res){
         endereco: "Av. Pedro Álvares Cabral – Parque Ibirapuera, São Paulo - SP, Brasil",
         classificacao: "+12",
         capacidade: "10.000",
-        valor: "520"
+        valor: "520",
+        ingresso: "marisa"
     };
     await shows.cria(show6);
 

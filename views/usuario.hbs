@@ -5,7 +5,7 @@
     <p><b>E-mail de cadastro: </b> {{usuario.email}}</p>
 
     <h4>Dados de Pagamento</h4>
-    
+
     <p><b>Nome do Cartão: </b> {{usuario.nomeCartao}}</p>
     <p><b>Número do Cartão: </b> {{usuario.numero}}</p>
     <p><b>Ano de Validade do Cartão: </b> {{usuario.validade}}</p>
@@ -23,8 +23,30 @@
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Gerar o pdf aqui, colocar um icone que exclui o pdf e um modal que pergunte se ele tem certeza 
-                    que deseja excluir o pdf
+                <div class="accordion-body">
+                    {{#if (eq show.ingresso "mcr")}}
+                    <iframe src="/mcr.pdf" width="100%" height="600px"></iframe>
+                    {{/if}}
+
+                    {{#if (eq show.ingresso "alessia")}}
+                    <iframe src="/alessia.pdf" width="100%" height="600px"></iframe>
+                    {{/if}}
+
+                    {{#if (eq show.ingresso "therose")}}
+                    <iframe src="/therose.pdf" width="100%" height="600px"></iframe>
+                    {{/if}}
+
+                    {{#if (eq show.ingresso "louis")}}
+                    <iframe src="/louis.pdf" width="100%" height="600px"></iframe>
+                    {{/if}}
+
+                    {{#if (eq show.ingresso "anavitoria")}}
+                    <iframe src="/anavitoria.pdf" width="100%" height="600px"></iframe>
+                    {{/if}}
+
+                    {{#if (eq show.ingresso "marisa")}}
+                    <iframe src="/marisa.pdf" width="100%" height="600px"></iframe>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -33,5 +55,4 @@
 
     <a href="/usuario/altera/{{usuario.cpf}}"><button type="button" class="btn btn-success">Alterar</button></a>
     <a href="/">Voltar</a>
-    </div>
-    
+</div>

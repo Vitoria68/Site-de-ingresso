@@ -22,7 +22,7 @@ async atualiza(show) {
         const colecao = bd().collection("shows")
         await colecao.updateOne(
             { id: show.id },
-            { $set: { nome: show.nome, data: show.data, imagem: show.imagem, horario: show.horario, abertura: show.abertura, endereco: show.endereco, classificacao: show.classificacao, capacidade: show.capacidade, valor: show.valor } }
+            { $set: { nome: show.nome, data: show.data, imagem: show.imagem, horario: show.horario, abertura: show.abertura, endereco: show.endereco, classificacao: show.classificacao, capacidade: show.capacidade, valor: show.valor, ingresso: show.ingresso } }
         )
     }
 
