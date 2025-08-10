@@ -156,4 +156,13 @@ exports.inscricao = async function (req, res) {
     // renderiza o arquivo dentro da pasta view
     res.render('inscricao', contexto);
 }
+exports.sobre = async function (req, res) {
+    contexto = {
+        titulo_pagina: "Quem somos",
+        titulo_secundario: "Quem somos",
+    }
+    // renderiza o arquivo dentro da pasta view
+    res.render('quemSomos', contexto);
+}
+
 

@@ -150,3 +150,12 @@ label {
   margin: 40px auto;
   color: #333;
 }
+.sobre{
+   background-color: #f7f9fc;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 40px auto;
+  color: #333;
+}

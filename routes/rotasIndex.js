@@ -4,7 +4,7 @@ var controllerIndex = require('../controller/controllerIndex.js')
 /* GET home page. */
 router.get('/', controllerIndex.tela_principal);
 /* GET página quemSomos */
-router.get('/quemSomos', controllerIndex.quemSomos);
+router.get('/quemSomos', controllerIndex.sobre);
 /* GET página ajuda */
 router.get('/ajuda', controllerIndex.ajuda);
 /* GET página meiaEntrada */
@@ -13,6 +13,9 @@ router.get('/meiaEntrada', controllerIndex.meiaEntrada);
 router.get('/usuario', controllerIndex.usuario);
 /* GET página inscricao */
 router.get('/inscricao', controllerIndex.inscricao);
+
+
+
 
 
 
