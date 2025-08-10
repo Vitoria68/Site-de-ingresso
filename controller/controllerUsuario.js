@@ -43,15 +43,19 @@ exports.login_get = async function (req, res) {
     }
     res.render('login', contexto);
 }
+
+
 exports.login_post = async function (req, res) {
     var email = req.body.email;
     var senha = req.body.senha;
     var usuario = await usuarios.consultaporEmail(email);
 
+    // verifica se existe o usuario ou se a senha é diferente
     if (!usuario || usuario.senha !== senha) {
         return res.redirect('/usuario/login');
     }
 
+    // cria a sessao se tiver tudo certo
     req.session.usuario = {
         nome: usuario.nome,
         email: usuario.email,
@@ -67,6 +71,7 @@ exports.login_post = async function (req, res) {
     res.redirect('/');
 }
 
+// destroi a sessao
 exports.logout = async function (req, res) {
     req.session.destroy(function (err) {
         if (err) {
@@ -119,6 +124,7 @@ exports.deleta = async function (req, res) {
     var cpf = req.params.cpf_usuario
     await usuarios.deleta(cpf);
 
+    // destroi a sessao assim que deleta o usuario
    req.session.destroy(function (err) {
         if (err) {
             console.log('Erro ao encerrar a sessão', err);
