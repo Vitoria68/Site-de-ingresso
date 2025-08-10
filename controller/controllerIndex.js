@@ -1,12 +1,12 @@
 // importação da classe que gerencia os usuarios na memória
 const usuarios = require('../model/usuarioMongo.js')
-const shows =  require('../model/showMongo.js')
+const shows = require('../model/showMongo.js')
 // cria e já exporta a função que será responsável pela tela principal
-exports.tela_principal = async function(req, res){
+exports.tela_principal = async function (req, res) {
     var usuario = req.session.usuario
 
-     var show1 = {
-        id:"1",
+    var show1 = {
+        id: "1",
         nome: "My Cheminal Romance",
         data: "06 de Fevereiro",
         imagem: "TourCheminal.jpg",
@@ -21,34 +21,34 @@ exports.tela_principal = async function(req, res){
     await shows.cria(show1);
 
     var show2 = {
-        id:"2",
+        id: "2",
         nome: "Alissia Cara",
         data: "21 de Novembro",
         imagem: "AlissiaCara_Tour.jpg",
         horario: "20h",
         abertura: "18h",
         endereco: " Rua Tagipuru, 795 – Barra Funda, São Paulo, SP",
-        classificacao:"15 anos",
+        classificacao: "15 anos",
         capacidade: "8.648",
         valor: "350,00",
         ingresso: "alessia"
-        
+
     };
     await shows.cria(show2);
 
     var show3 = {
-        id:"3",
+        id: "3",
         nome: "The Rose",
         data: "08 de Setembro",
         imagem: "TheRose_Tour.jpg",
-        horario:"20h",
+        horario: "20h",
         abertura: "18h",
         endereco: " VIBRA São Paulo - Av. das Nações Unidas, 17955 - Vila Almeida, São Paulo - SP, 04795-100",
         classificacao: "15 anos",
         capacidade: "5.455",
         valor: "990,00",
         ingresso: "therose"
-        
+
     };
     await shows.cria(show3);
 
@@ -64,7 +64,7 @@ exports.tela_principal = async function(req, res){
         capacidade: "8.000",
         valor: "820",
         ingresso: "louis"
-       
+
     };
     await shows.cria(show4);
 
@@ -88,7 +88,7 @@ exports.tela_principal = async function(req, res){
         nome: "Marisa Monte",
         data: "25 de Setembro",
         imagem: "Marisa Monte.jpg",
-         horario: "20h",
+        horario: "20h",
         abertura: "18h",
         endereco: "Av. Pedro Álvares Cabral – Parque Ibirapuera, São Paulo - SP, Brasil",
         classificacao: "+12",
@@ -104,15 +104,15 @@ exports.tela_principal = async function(req, res){
     contexto = {
         titulo_pagina: "Página inicial",
         usuarios: await usuarios.lista(),
-        usuario:usuario,
-        ListaDeShows : listaDeShows,
-        
-}
+        usuario: usuario,
+        ListaDeShows: listaDeShows,
+
+    }
     // renderiza o arquivo home.hbs, dentro da pasta view
     res.render('home', contexto);
 }
 
-exports.quemSomos = async function(req, res){
+exports.quemSomos = async function (req, res) {
     contexto = {
         titulo_pagina: "Quem Somos",
         titulo_secundario: "Quem somos"
@@ -121,7 +121,7 @@ exports.quemSomos = async function(req, res){
     res.render('quemSomos', contexto);
 }
 
-exports.ajuda = async function(req, res){
+exports.ajuda = async function (req, res) {
     contexto = {
         titulo_pagina: "Ajuda",
         titulo_secundario: "Ajuda",
@@ -130,7 +130,7 @@ exports.ajuda = async function(req, res){
     res.render('ajuda', contexto);
 }
 
-exports.meiaEntrada = async function(req, res){
+exports.meiaEntrada = async function (req, res) {
     contexto = {
         titulo_pagina: "Meia Entrada",
         titulo_secundario: "Meia Entrada",
@@ -139,7 +139,7 @@ exports.meiaEntrada = async function(req, res){
     res.render('meiaEntrada', contexto);
 }
 
-exports.usuario = async function(req, res){
+exports.usuario = async function (req, res) {
     contexto = {
         titulo_pagina: "Página do Usuário",
         titulo_secundario: "Página do Usuário",
@@ -148,7 +148,7 @@ exports.usuario = async function(req, res){
     res.render('usuario', contexto);
 }
 
-exports.inscricao = async function(req, res){
+exports.inscricao = async function (req, res) {
     contexto = {
         titulo_pagina: "Novo Usuario",
         titulo_secundario: "Novo Usuário",

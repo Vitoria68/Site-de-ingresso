@@ -12,10 +12,10 @@
             <p><h5>Classificação:</h5> {{show.classificacao}}</p>
             <p><h5>Capacidade:</h5> {{show.capacidade}} pessoas</p>
             <p><h5>Valor do ingresso:</h5> R$ {{show.valor}},00</p>
-
+            
             {{!-- se a pessoa tiver logada --}}
             {{#if usuario}}
-           <button type="button" class="btn btn-success">Comprar Ingresso</button>
+           <a href="/{{show.id}}.pdf" target="_blank" class="btn btn-success">Comprar Ingresso</a>
             {{else}}
            <a href="/usuario/login"> <button type="button" class="btn btn-success">Comprar Ingresso</button></a>
             {{/if}}

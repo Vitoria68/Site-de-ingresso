@@ -14,5 +14,7 @@ router.get('/usuario', controllerIndex.usuario);
 /* GET página inscricao */
 router.get('/inscricao', controllerIndex.inscricao);
 
+
+
 module.exports = router;
 
